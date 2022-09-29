@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue"
-const plan = ref<string>("")
+import { onMounted, ref, watch } from "vue"
+import { useRoute, useRouter } from "vue-router"
+const plan = ref<number>(0)
+const route = useRoute()
+const router = useRouter()
 
-const getScroll = () => {}
 onMounted(() => {
   document.addEventListener(
     "scroll",
@@ -10,16 +12,24 @@ onMounted(() => {
       let scrollTop = document.querySelector(".app-main").scrollTop
       let scrollHeight = document.querySelector(".app-main").scrollHeight // 文档总高度
       let clientHeight = document.documentElement.clientHeight // 窗口可视高度
-      plan.value = +(scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100 + "%"
+      if (scrollHeight - clientHeight == 0) return
+      plan.value = (scrollTop / (scrollHeight - clientHeight)) * 100
     },
     true
   )
 })
+
+watch(
+  () => route.path,
+  () => {
+    plan.value = 0
+  }
+)
 </script>
 
 <template>
   <div class="all">
-    <div class="active" :style="{ '--plan': plan }"></div>
+    <div class="active" :style="{ '--plan': plan + '%' }"></div>
   </div>
 </template>
 
