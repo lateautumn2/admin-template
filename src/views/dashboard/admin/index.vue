@@ -4,11 +4,6 @@ import SuspendDom from "@/components/SuspendDom/index.vue"
 
 <template>
   <div class="app-container">
-    <div class="flex_xy_center">
-      <SuspendDom />
-      <SuspendDom />
-      <SuspendDom />
-      <SuspendDom />
-    </div>
+    <div class="flex_xy_center"></div>
   </div>
 </template>

@@ -102,12 +102,15 @@ const isCollapse = computed(() => {
   width: 100% !important;
 }
 
-::v-deep(.el-menu-item),
-::v-deep(.el-sub-menu__title),
-::v-deep(.el-sub-menu .el-menu-item) {
+:deep(.el-menu-item),
+:deep(.el-sub-menu__title),
+:deep(.el-sub-menu .el-menu-item) {
   height: var(--v3-sidebar-menu-item-height);
   line-height: var(--v3-sidebar-menu-item-height);
   &:hover {
+    background-color: var(--v3-sidebar-menu-hover-bg-color);
+  }
+  &.is-active {
     background-color: var(--v3-sidebar-menu-hover-bg-color);
   }
   display: block;
@@ -116,14 +119,14 @@ const isCollapse = computed(() => {
   }
 }
 
-::v-deep(.el-menu-item) {
+:deep(.el-menu-item) {
   &.is-active {
     @include tip-line;
   }
 }
 
 .el-menu--collapse {
-  ::v-deep(.el-sub-menu) {
+  :deep(.el-sub-menu) {
     &.is-active {
       .el-sub-menu__title {
         color: var(--v3-sidebar-menu-active-text-color) !important;

@@ -6,6 +6,7 @@ import { useSettingsStore } from "@/store/modules/settings"
 import { useUserStore } from "@/store/modules/user"
 import { UserFilled } from "@element-plus/icons-vue"
 import Breadcrumb from "../Breadcrumb/index.vue"
+import TagsView from "../TagsView/index.vue"
 import Hamburger from "../Hamburger/index.vue"
 import ThemeSwitch from "@/components/ThemeSwitch/index.vue"
 import Screenfull from "@/components/Screenfull/index.vue"
@@ -24,6 +25,9 @@ const showThemeSwitch = computed(() => {
 const showScreenfull = computed(() => {
   return settingsStore.showScreenfull
 })
+const showTagsView = computed(() => {
+  return settingsStore.showTagsView
+})
 
 const toggleSidebar = () => {
   appStore.toggleSidebar(false)
@@ -37,7 +41,8 @@ const logout = () => {
 <template>
   <div class="navigation-bar">
     <Hamburger :is-active="sidebar.opened" class="hamburger" @toggle-click="toggleSidebar" />
-    <Breadcrumb class="breadcrumb" />
+    <!-- <Breadcrumb class="breadcrumb" /> -->
+    <TagsView v-if="showTagsView" />
     <div class="right-menu">
       <Screenfull v-if="showScreenfull" class="right-menu-item" />
       <ThemeSwitch v-if="showThemeSwitch" class="right-menu-item" />
@@ -78,6 +83,9 @@ const logout = () => {
 
 <style lang="scss" scoped>
 .navigation-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
   height: var(--v3-navigationbar-height);
   overflow: hidden;
   .hamburger {
@@ -94,10 +102,13 @@ const logout = () => {
   .right-menu {
     float: right;
     margin-right: 10px;
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     color: #606266;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #ccc;
     .right-menu-item {
       padding: 0 10px;
       cursor: pointer;

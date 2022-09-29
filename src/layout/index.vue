@@ -41,7 +41,7 @@ const handleClickOutside = () => {
     <div :class="{ hasTagsView: showTagsView }" class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
         <NavigationBar />
-        <TagsView v-if="showTagsView" />
+        <!-- <TagsView v-if="showTagsView" /> -->
       </div>
       <AppMain />
       <RightPanel v-if="showSettings">
@@ -75,14 +75,15 @@ const handleClickOutside = () => {
 .main-container {
   min-height: 100%;
   transition: margin-left 0.28s;
-  margin-left: var(--v3-sidebar-width);
+  margin-left: calc(var(--v3-sidebar-width) + 32px);
   position: relative;
 }
 
 .sidebar-container {
+  margin: 16px;
   transition: width 0.28s;
   width: var(--v3-sidebar-width) !important;
-  height: 100%;
+  height: calc(100% - 32px);
   position: fixed;
   font-size: 0px;
   top: 0;
@@ -90,6 +91,8 @@ const handleClickOutside = () => {
   left: 0;
   z-index: 1001;
   overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px #ccc;
 }
 
 .fixed-header {
@@ -97,19 +100,19 @@ const handleClickOutside = () => {
   top: 0;
   right: 0;
   z-index: 9;
-  width: calc(100% - var(--v3-sidebar-width));
+  width: calc(100% - var(--v3-sidebar-width) - 32px);
   transition: width 0.28s;
 }
 
 .hideSidebar {
   .main-container {
-    margin-left: var(--v3-sidebar-hide-width);
+    margin-left: calc(var(--v3-sidebar-hide-width) + 32px);
   }
   .sidebar-container {
     width: var(--v3-sidebar-hide-width) !important;
   }
   .fixed-header {
-    width: calc(100% - var(--v3-sidebar-hide-width));
+    width: calc(100% - var(--v3-sidebar-hide-width) - 32px);
   }
 }
 

@@ -185,17 +185,18 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .tags-view-container {
-  height: var(--v3-tagsview-height);
+  // height: var(--v3-tagsview-height);
+  height: 100%;
   width: 100%;
-  border-bottom: 1px solid #d8dce5;
-  box-shadow: 0 1px 3px 0 #00000010, 0 0 3px 0 #00000010;
+  // border-bottom: 1px solid #d8dce5;
+  // box-shadow: 0 1px 3px 0 #00000010, 0 0 3px 0 #00000010;
   .tags-view-wrapper {
     .tags-view-item {
       display: inline-block;
       position: relative;
       cursor: pointer;
-      height: 26px;
-      line-height: 26px;
+      height: 40px;
+      line-height: 40px;
       border: 1px solid var(--v3-tagsview-tag-border-color);
       color: var(--v3-tagsview-tag-text-color);
       background-color: var(--v3-tagsview-tag-bg-color);
@@ -203,6 +204,8 @@ onMounted(() => {
       font-size: 12px;
       margin-left: 5px;
       margin-top: 4px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #ccc;
       &:first-of-type {
         margin-left: 15px;
       }
