@@ -74,7 +74,7 @@ const handleMouseLeave = () => {
   flex: 0 0 240px;
   width: 240px;
   height: 320px;
-  background-color: #333;
+  background-color: #eef1ff;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: rgba(black, 0.66) 0 30px 60px 0, inset #b1b2ff 0 0 0 5px, inset rgba(white, 0.5) 0 0 0 6px;
