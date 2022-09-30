@@ -102,6 +102,7 @@ const handleClickOutside = () => {
   z-index: 9;
   width: calc(100% - var(--v3-sidebar-width) - 32px);
   transition: width 0.28s;
+  background-color: var(--v3-body-bg-color);
 }
 
 .hideSidebar {
@@ -133,7 +134,7 @@ const handleClickOutside = () => {
     .sidebar-container {
       pointer-events: none;
       transition-duration: 0.3s;
-      transform: translate3d(calc(0px - var(--v3-sidebar-width)), 0, 0);
+      transform: translate3d(calc(0px - var(--v3-sidebar-width) - 32px), 0, 0);
     }
   }
 
