@@ -42,16 +42,15 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: "/unocss",
+    path: "/component",
     component: Layout,
-    redirect: "/unocss/index",
     children: [
       {
         path: "index",
-        component: () => import("@/views/unocss/index.vue"),
-        name: "UnoCSS",
+        component: () => import("@/views/component/index.vue"),
+        name: "Component",
         meta: {
-          title: "unocss",
+          title: "组件",
           icon: "unocss"
         }
       }

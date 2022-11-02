@@ -7,38 +7,38 @@ import LineChart from "@/components/lineChart/index.vue"
 // 模块统计数据
 const chartMap = ref({
   line: {
-    title: "客户总数",
-    label: ["平均客户总数", "客户总数"],
+    title: "总数",
+    label: ["平均总数", "总数"],
     data: null,
     color: ["#CBD1E1", "#A276FF"]
   },
   line2: {
-    title: "复访转化率",
-    label: ["平均复访转化率", "复访转化率"],
+    title: "转化率",
+    label: ["平均转化率", "转化率"],
     data: null,
     color: ["#CBD1E1", "#4DC9C1"]
   },
   line3: {
-    title: "总接待时长",
-    label: ["平均总接待时长", "总接待时长"],
+    title: "总时长",
+    label: ["平均时长", "总时长"],
     data: null,
     color: ["#CBD1E1", "#14A5FF"]
   },
   line4: {
-    title: "平均接待时长",
-    label: ["项目平均接待时长", "平均接待时长"],
+    title: "平均时长",
+    label: ["项目平均时长", "平均时长"],
     data: null,
     color: ["#CBD1E1", "#FFA05D"]
   },
   pie: {
-    title: "平均接待时长",
-    label: ["项目平均接待时长", "平均接待时长"],
+    title: "平均时长",
+    label: ["项目平均时长", "平均时长"],
     data: null,
     color: ["#CBD1E1", "#6084FF"]
   },
   bar: {
-    title: "总体话术执行率趋势",
-    label: ["项目总体话术执行率", "总体话术执行率"],
+    title: "执行率趋势",
+    label: ["项目总体执行率", "总体执行率"],
     data: null,
     color: ["#CBD1E1", "#FFC933"]
   }
