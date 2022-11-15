@@ -39,5 +39,9 @@ declare module "vue-router" {
      * 该属性适合使用在有 hidden: true 属性的路由上
      */
     activeMenu?: string
+    /**
+     * 是否希望页面被keep-alive缓存
+     */
+    Cache?:boolean
   }
 }

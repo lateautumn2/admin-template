@@ -1,3 +1,1 @@
-<template>
-  <div class="app-container">Editor 权限可见</div>
-</template>
+<template>Editor 权限可见</template>

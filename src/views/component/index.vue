@@ -331,14 +331,12 @@ const list = ref([
 </script>
 
 <template>
-  <div class="app-container">
-    <div class="list">
-      <List :data-list="list">
-        <template v-slot:default="{ item }">
-          <div>这是一条虚拟列表数据{{ item.id }}</div>
-        </template>
-      </List>
-    </div>
+  <div class="list">
+    <List :data-list="list">
+      <template v-slot:default="{ item }">
+        <div>这是一条虚拟列表数据{{ item.id }}</div>
+      </template>
+    </List>
   </div>
 </template>
 

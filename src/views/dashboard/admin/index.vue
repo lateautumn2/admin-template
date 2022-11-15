@@ -60,17 +60,15 @@ getList()
 </script>
 
 <template>
-  <div class="app-container">
-    <div class="flex_xy_evenly">
-      <SuspendDom></SuspendDom>
-      <SuspendDom></SuspendDom>
-      <SuspendDom></SuspendDom>
-      <SuspendDom></SuspendDom>
-    </div>
-    <el-row :gutter="32">
-      <el-col :xs="24" :sm="24" :lg="12" v-for="(item, index) in chartMap" :key="item.title">
-        <LineChart :title="item.title" :color="item.color" :tooltipName="item.label" :data="item.data" />
-      </el-col>
-    </el-row>
+  <div class="flex_xy_evenly">
+    <SuspendDom></SuspendDom>
+    <SuspendDom></SuspendDom>
+    <SuspendDom></SuspendDom>
+    <SuspendDom></SuspendDom>
   </div>
+  <el-row :gutter="32">
+    <el-col :xs="24" :sm="24" :lg="12" v-for="(item, index) in chartMap" :key="item.title">
+      <LineChart :title="item.title" :color="item.color" :tooltipName="item.label" :data="item.data" />
+    </el-col>
+  </el-row>
 </template>

@@ -12,9 +12,12 @@ const key = computed(() => {
   <section class="app-main">
     <router-view v-slot="{ Component }">
       <transition name="fade-transform" mode="out-in">
-        <keep-alive :include="[]">
-          <component :is="Component" :key="key" />
-        </keep-alive>
+        <div class="app-container">
+          <keep-alive>
+            <component :is="Component" :key="key" v-if="!route.meta.Cache" />
+          </keep-alive>
+          <component :is="Component" :key="key" v-if="route.meta.Cache" />
+        </div>
       </transition>
     </router-view>
   </section>
