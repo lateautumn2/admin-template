@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue"
 import List from "@/components/list/index.vue"
+import CalenDars from "@/components/calendars/index.vue"
 
 const list = ref([
   {
@@ -331,12 +332,13 @@ const list = ref([
 </script>
 
 <template>
-  <div class="list">
+  <div class="list" data-tilt>
     <List :data-list="list">
-      <template v-slot:default="{ item }">
+      <template #default="{ item }">
         <div>这是一条虚拟列表数据{{ item.id }}</div>
       </template>
     </List>
+    <CalenDars />
   </div>
 </template>
 
