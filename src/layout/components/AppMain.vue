@@ -32,7 +32,7 @@ const key = computed(() => {
 }
 
 .fixed-header + .app-main {
-  padding-top: var(--v3-navigationbar-height);
+  padding-top: calc(16px + var(--v3-navigationbar-height));
   height: 100vh;
   overflow: auto;
 }

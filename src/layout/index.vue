@@ -77,6 +77,7 @@ const handleClickOutside = () => {
   transition: margin-left 0.28s;
   margin-left: calc(var(--v3-sidebar-width) + 32px);
   position: relative;
+  overflow: hidden;
 }
 
 .sidebar-container {

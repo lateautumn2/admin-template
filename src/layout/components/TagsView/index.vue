@@ -185,11 +185,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .tags-view-container {
-  // height: var(--v3-tagsview-height);
+  display: inline-block;
+  width: calc(100% - 200px);
   height: 100%;
-  width: 100%;
-  // border-bottom: 1px solid #d8dce5;
-  // box-shadow: 0 1px 3px 0 #00000010, 0 0 3px 0 #00000010;
   .tags-view-wrapper {
     .tags-view-item {
       display: inline-block;

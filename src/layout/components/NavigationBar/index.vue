@@ -83,8 +83,7 @@ const logout = () => {
 
 <style lang="scss" scoped>
 .navigation-bar {
-  display: flex;
-  align-items: center;
+  width: 100%;
   margin-top: 16px;
   height: var(--v3-navigationbar-height);
   overflow: hidden;
