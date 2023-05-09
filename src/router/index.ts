@@ -23,11 +23,20 @@ export const constantRoutes: RouteRecordRaw[] = [
     meta: {
       hidden: true
     }
-  },
+  }
+]
+
+/**
+ * 动态路由
+ * 用来放置有权限 (Roles 属性) 的路由
+ * 必须带有 Name 属性
+ */
+export const asyncRoutes: RouteRecordRaw[] = [
   {
     path: "/",
     component: Layout,
     redirect: "/dashboard",
+    name: "dashboard",
     children: [
       {
         path: "dashboard",
@@ -36,7 +45,8 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: {
           title: "首页",
           icon: "dashboard",
-          affix: true
+          affix: true,
+          roles: ["admin", "editor"]
         }
       }
     ]
@@ -44,6 +54,7 @@ export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/component",
     component: Layout,
+    name: "component",
     children: [
       {
         path: "index",
@@ -51,7 +62,8 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "Component",
         meta: {
           title: "组件",
-          icon: "unocss"
+          icon: "unocss",
+          roles: ["admin", "editor"]
         }
       }
     ]
@@ -59,6 +71,7 @@ export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/link",
     component: Layout,
+    name: "link",
     children: [
       {
         path: "https://juejin.cn/post/7089377403717287972",
@@ -66,7 +79,8 @@ export const constantRoutes: RouteRecordRaw[] = [
         name: "Link",
         meta: {
           title: "外链",
-          icon: "link"
+          icon: "link",
+          roles: ["admin", "editor"]
         }
       }
     ]
@@ -78,7 +92,8 @@ export const constantRoutes: RouteRecordRaw[] = [
     name: "Menu",
     meta: {
       title: "多级菜单",
-      icon: "menu"
+      icon: "menu",
+      roles: ["admin", "editor"]
     },
     children: [
       {
@@ -86,32 +101,32 @@ export const constantRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/menu/menu1/index.vue"),
         redirect: "/menu/menu1/menu1-1",
         name: "Menu1",
-        meta: { title: "menu1" },
+        meta: { title: "menu1", roles: ["admin", "editor"] },
         children: [
           {
             path: "menu1-1",
             component: () => import("@/views/menu/menu1/menu1-1/index.vue"),
             name: "Menu1-1",
-            meta: { title: "menu1-1" }
+            meta: { title: "menu1-1", roles: ["admin", "editor"] }
           },
           {
             path: "menu1-2",
             component: () => import("@/views/menu/menu1/menu1-2/index.vue"),
             redirect: "/menu/menu1/menu1-2/menu1-2-1",
             name: "Menu1-2",
-            meta: { title: "menu1-2" },
+            meta: { title: "menu1-2", roles: ["admin", "editor"] },
             children: [
               {
                 path: "menu1-2-1",
                 component: () => import("@/views/menu/menu1/menu1-2/menu1-2-1/index.vue"),
                 name: "Menu1-2-1",
-                meta: { title: "menu1-2-1" }
+                meta: { title: "menu1-2-1", roles: ["admin", "editor"] }
               },
               {
                 path: "menu1-2-2",
                 component: () => import("@/views/menu/menu1/menu1-2/menu1-2-2/index.vue"),
                 name: "Menu1-2-2",
-                meta: { title: "menu1-2-2" }
+                meta: { title: "menu1-2-2", roles: ["admin", "editor"] }
               }
             ]
           },
@@ -119,7 +134,7 @@ export const constantRoutes: RouteRecordRaw[] = [
             path: "menu1-3",
             component: () => import("@/views/menu/menu1/menu1-3/index.vue"),
             name: "Menu1-3",
-            meta: { title: "menu1-3" }
+            meta: { title: "menu1-3", roles: ["admin", "editor"] }
           }
         ]
       },
@@ -127,18 +142,10 @@ export const constantRoutes: RouteRecordRaw[] = [
         path: "menu2",
         component: () => import("@/views/menu/menu2/index.vue"),
         name: "Menu2",
-        meta: { title: "menu2" }
+        meta: { title: "menu2", roles: ["admin", "editor"] }
       }
     ]
-  }
-]
-
-/**
- * 动态路由
- * 用来放置有权限 (Roles 属性) 的路由
- * 必须带有 Name 属性
- */
-export const asyncRoutes: RouteRecordRaw[] = [
+  },
   {
     path: "/permission",
     component: Layout,

@@ -66,7 +66,7 @@ getList()
     <SuspendDom></SuspendDom>
     <SuspendDom></SuspendDom>
   </div>
-  <el-row :gutter="32">
+  <el-row :gutter="16">
     <el-col :xs="24" :sm="24" :lg="12" v-for="(item, index) in chartMap" :key="item.title">
       <LineChart :title="item.title" :color="item.color" :tooltipName="item.label" :data="item.data" />
     </el-col>

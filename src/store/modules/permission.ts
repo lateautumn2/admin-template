@@ -34,6 +34,7 @@ const filterAsyncRoutes = (routes: RouteRecordRaw[], roles: string[]) => {
 
 export const usePermissionStore = defineStore("permission", () => {
   const routes = ref<RouteRecordRaw[]>([])
+  const menuRoutes = ref<RouteRecordRaw[]>([])
   const dynamicRoutes = ref<RouteRecordRaw[]>([])
 
   const setRoutes = (roles: string[]) => {
@@ -44,10 +45,11 @@ export const usePermissionStore = defineStore("permission", () => {
       accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
     }
     routes.value = constantRoutes.concat(accessedRoutes)
+    menuRoutes.value = accessedRoutes
     dynamicRoutes.value = accessedRoutes
   }
 
-  return { routes, dynamicRoutes, setRoutes }
+  return { routes, menuRoutes, dynamicRoutes, setRoutes }
 })
 
 /** 在 setup 外使用 */
