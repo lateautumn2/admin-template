@@ -34,17 +34,17 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       hmr: true,
       watch: {
         usePolling: true
-      }
+      },
       /** 接口代理 */
-      // proxy: {
-      //   "/mock-api": {
-      //     target: "https://vue-typescript-admin-mock-server-armour.vercel.app/mock-api",
-      //     ws: true,
-      //     /** 是否允许跨域 */
-      //     changeOrigin: true,
-      //     rewrite: (path) => path.replace("/mock-api", "")
-      //   }
-      // }
+      proxy: {
+        "/api": {
+          target: "htp://192.168.0.221:3000/",
+          ws: true,
+          /** 是否允许跨域 */
+          changeOrigin: true,
+          rewrite: (path) => path.replace("/api", "")
+        }
+      }
     },
     build: {
       /** 消除打包大小超过 500kb 警告 */
@@ -76,23 +76,6 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       }),
       /** UnoCSS */
       UnoCSS()
-      /** 自动按需引入 (已更改为完整引入，所以注释了) */
-      // AutoImport({
-      //   dts: "./types/auto-imports.d.ts",
-      //   /** 自动按需导入 Element-Plus 相关函数，比如 ElMessage */
-      //   resolvers: [ElementPlusResolver()],
-      //   /** 根据自动按需导入的相关 API，生成 .eslintrc-auto-import.json 文件供 Eslint 识别 */
-      //   eslintrc: {
-      //     enabled: true, // 默认 false
-      //     filepath: "./types/.eslintrc-auto-import.json", // 默认 "./.eslintrc-auto-import.json"
-      //     globalsPropValue: true // 默认 true (true | false | "readonly" | "readable" | "writable" | "writeable")
-      //   }
-      // }),
-      // Components({
-      //   dts: "./types/components.d.ts",
-      //   /** 自动按需导入 Element-Plus 组件 */
-      //   resolvers: [ElementPlusResolver()]
-      // })
     ]
   }
 }

@@ -7,6 +7,8 @@ import App from "./App.vue"
 import ElementPlus from "element-plus"
 import loadSvg from "@/icons"
 import * as directives from "@/directives"
+import ArcoVue from "@arco-design/web-vue"
+import "@arco-design/web-vue/dist/arco.css"
 
 import "uno.css"
 import "normalize.css"
@@ -19,6 +21,7 @@ import "./mock/index.ts"
 const app = createApp(App)
 /** Element-Plus 组件完整引入 */
 app.use(ElementPlus)
+app.use(ArcoVue)
 /** 加载全局 SVG */
 loadSvg(app)
 /** 自定义指令 */
