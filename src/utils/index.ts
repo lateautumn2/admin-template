@@ -20,3 +20,18 @@ export const getCssVariableValue = (cssVariableName: string) => {
   }
   return cssVariableValue
 }
+
+export const shortcuts = [
+  {
+    label: "next 7 days",
+    value: () => [dayjs(), dayjs().add(1, "week")] as unknown as any
+  },
+  {
+    label: "next 30 days",
+    value: () => [dayjs(), dayjs().add(1, "month")] as unknown as any
+  },
+  {
+    label: "next 365 days",
+    value: () => [dayjs(), dayjs().add(1, "year")] as unknown as any
+  }
+]
