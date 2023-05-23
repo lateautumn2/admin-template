@@ -22,12 +22,11 @@ export const useUserStore = defineStore("user", () => {
     return new Promise((resolve, reject) => {
       loginApi({
         username: loginData.username,
-        password: loginData.password,
-        code: loginData.code
+        password: loginData.password
       })
         .then((res: any) => {
-          setToken(res.data.token)
-          token.value = res.data.token
+          setToken(res.token)
+          token.value = res.token
           resolve(true)
         })
         .catch((error) => {

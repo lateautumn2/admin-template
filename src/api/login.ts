@@ -2,11 +2,9 @@ import { request } from "@/utils/service"
 
 export interface ILoginData {
   /** admin 或 editor */
-  username: "admin" | "editor"
+  username: string
   /** 密码 */
   password: string
-  /** 验证码 */
-  code: string
 }
 
 /** 获取登录验证码 */

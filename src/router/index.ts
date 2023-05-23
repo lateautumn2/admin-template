@@ -68,17 +68,8 @@ export const asyncRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/basicStream/put.vue"),
         name: "put",
         meta: {
-          title: "入库",
-          affix: false,
-          roles: ["admin", "editor"]
-        }
-      },
-      {
-        path: "out",
-        component: () => import("@/views/basicStream/out.vue"),
-        name: "out",
-        meta: {
-          title: "出库",
+          title: "统计",
+          icon: "dashboard",
           affix: false,
           roles: ["admin", "editor"]
         }
