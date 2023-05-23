@@ -60,6 +60,7 @@ const handleClickOutside = () => {
   @include clearfix;
   position: relative;
   width: 100%;
+  background-color: var(--v3-body-bg-color);
 }
 
 .drawer-bg {
